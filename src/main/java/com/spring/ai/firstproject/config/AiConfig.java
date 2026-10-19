@@ -17,7 +17,8 @@ import java.util.List;
 @Configuration
 public class AiConfig {
     private Logger logger = LoggerFactory.getLogger(AiConfig.class);
-
+    
+    @Bean
     public ChatMemory chatMemory(JdbcChatMemoryRepository jdbcChatMemoryRepository){
         return MessageWindowChatMemory.builder()
                 .chatMemoryRepository(jdbcChatMemoryRepository)
